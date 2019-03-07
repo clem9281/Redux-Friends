@@ -1,0 +1,50 @@
+.login-page {
+  min-height: 100vh;
+  background: $light;
+  @include customFlex(center, center);
+  .form-container {
+    background: white;
+    padding: 3rem;
+    border-radius: 10px;
+    width: 90%;
+    @media #{$landscape} {
+      width: auto;
+      padding: 3rem 5rem;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 20px 0 5px;
+    }
+    input {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid $light;
+      &::placeholder {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 600;
+        letter-spacing: 0.05rem;
+      }
+    }
+    button {
+      cursor: pointer;
+      background: $dark;
+      border: 1px solid $dark;
+      color: white;
+      border-radius: 27px;
+      padding: 1.5rem 2rem;
+      margin: 20px 0 0;
+      transition: background 0.2s, border 0.2s;
+      &:hover {
+        background: $primary;
+        border: 1px solid $primary;
+      }
+    }
+    h2,
+    label,
+    input::placeholder,
+    button {
+      @include uppercase();
+    }
+  }
+}
