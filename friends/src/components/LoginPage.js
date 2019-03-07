@@ -64,10 +64,6 @@ class LoginPage extends React.Component {
     );
   }
 }
-// do I need this?
-const mapStateToProps = state => ({
-  state
-});
 
 export default connect(
   null,
