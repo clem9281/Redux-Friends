@@ -1,7 +1,24 @@
+import { LOGIN_START, LOGIN_SUCCESS } from "../actions";
+
 const initialState = {
-  friends: []
+  friends: [],
+  loading: false,
+  token: null
 };
 
 export const reducer = (state = initialState, action) => {
-  return state;
+  switch (action.type) {
+    case LOGIN_START:
+      return {
+        ...state,
+        loading: true
+      };
+    case LOGIN_SUCCESS:
+      return {
+        ...state,
+        token: action.payload
+      };
+    default:
+      return state;
+  }
 };

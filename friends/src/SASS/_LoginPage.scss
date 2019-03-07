@@ -39,6 +39,10 @@
         background: $primary;
         border: 1px solid $primary;
       }
+      &:disabled {
+        background: $light;
+        border: 1px solid $light;
+      }
     }
     h2,
     label,
