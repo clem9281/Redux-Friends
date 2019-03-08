@@ -6,8 +6,9 @@
   @media #{$tablet} {
     width: 50%;
   }
-  h1 {
-    text-align: center;
+  .header {
+    display: flex;
+    justify-content: space-evenly;
   }
   .card {
     margin: 20px 0 0;

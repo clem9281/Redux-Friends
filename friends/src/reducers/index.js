@@ -2,13 +2,17 @@ import {
   LOGIN_START,
   LOGIN_SUCCESS,
   GETTING_FRIENDS,
-  GOT_FRIENDS
+  GOT_FRIENDS,
+  ADDING_FRIEND,
+  FAILURE,
+  ADD_FRIEND_SUCCESS
 } from "../actions";
 
 const initialState = {
   friends: [],
   loading: false,
-  token: null
+  token: null,
+  error: null
 };
 
 export const reducer = (state = initialState, action) => {
@@ -31,8 +35,23 @@ export const reducer = (state = initialState, action) => {
     case GOT_FRIENDS:
       return {
         ...state,
-        friends: [...state.friends, ...action.payload],
+        friends: [...action.payload],
         loading: false
+      };
+    case ADDING_FRIEND:
+      return {
+        ...state,
+        loading: true
+      };
+    case ADD_FRIEND_SUCCESS:
+      return {
+        ...state,
+        loading: false
+      };
+    case FAILURE:
+      return {
+        ...state,
+        error: action.payload
       };
     default:
       return state;
